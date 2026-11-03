@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Red Pill, Pink Pill: who profits when gender becomes a war?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,500&family=Inter:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#fbf6f3;--ink:#1d1418;--mute:#6b5a61;--red:#c8202b;--pink:#d93a86;--card:#fff;--line:#eadde0;--glow:rgba(217,58,134,.25);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#130b0f;--ink:#f6eef1;--mute:#b8a5ad;--red:#ff4d58;--pink:#ff7ab8;--card:#1e1318;--line:#34222b;--glow:rgba(255,77,88,.3)}}
+:root[data-theme="dark"]{--bg:#130b0f;--ink:#f6eef1;--mute:#b8a5ad;--red:#ff4d58;--pink:#ff7ab8;--card:#1e1318;--line:#34222b;--glow:rgba(255,77,88,.3)}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.08rem/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--pink)}
+.wrap{max-width:720px;margin:0 auto;padding:0 1.25rem}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;max-width:1000px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+h1,h2{font-family:Fraunces,Georgia,serif;line-height:1.08;margin:.4rem 0 1rem}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;background:linear-gradient(90deg,var(--red),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.7rem,4.5vw,2.4rem);font-weight:800}
+.sub{font-size:1.2rem;color:var(--mute);margin:0 0 1.2rem}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--red),var(--pink));color:#fff;padding:.75rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none}
+.pillbox{display:grid;place-items:center;min-height:240px}
+.pill{width:min(300px,70vw);aspect-ratio:2/1;border-radius:999px;background:linear-gradient(90deg,var(--red) 50%,var(--pink) 50%);transform:rotate(-20deg);box-shadow:0 30px 80px var(--glow);position:relative;display:flex;align-items:center;justify-content:space-around;color:#fff;font-weight:800;letter-spacing:.2em;font-size:.9rem;animation:sweep 7s ease-in-out infinite}
+.pill:after{content:"";position:absolute;left:8%;right:8%;top:12%;height:22%;border-radius:999px;background:rgba(255,255,255,.28)}
+@keyframes sweep{0%,100%{transform:translateX(-70px) rotate(-20deg)}50%{transform:translateX(70px) rotate(-10deg)}}
+@media (prefers-reduced-motion:reduce){.pill{animation:none}html{scroll-behavior:auto}}
+section{padding:3rem 0}
+p{margin:0 0 1.1rem}
+.lead{font-size:1.25rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem;margin:1.6rem 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem}
+.stat b{display:block;font:800 2rem/1.1 Fraunces,Georgia,serif;color:var(--red)}
+.stat span{font-size:.85rem;color:var(--mute);line-height:1.4;display:block;margin-top:.3rem}
+blockquote{margin:1.8rem 0;padding:.4rem 0 .4rem 1.2rem;border-left:4px solid var(--pink);font:italic 500 1.4rem/1.4 Fraunces,Georgia,serif}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.6rem 0}
+.card{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--red);border-radius:16px;padding:1.2rem}
+.card.pk{border-top-color:var(--pink)}
+.card h3{margin:0 0 .6rem;font:800 1.2rem Fraunces,Georgia,serif}
+.card ul{margin:0;padding-left:1.1rem;font-size:.95rem;line-height:1.55}
+.note{background:var(--card);border:1px dashed var(--pink);border-radius:16px;padding:1rem 1.2rem;font-size:.95rem;color:var(--mute);margin:1.4rem 0}
+.tl{list-style:none;padding:0;margin:1.6rem 0;border-left:3px solid var(--red)}
+.tl li{padding:0 0 1.3rem 1.3rem;position:relative}
+.tl li:before{content:"";position:absolute;left:-9px;top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--pink);border:3px solid var(--bg)}
+.tl b{color:var(--red)}
+.moves{counter-reset:m;list-style:none;padding:0;display:grid;gap:.8rem}
+.moves li{counter-increment:m;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem 1rem 1rem 3.6rem;position:relative}
+.moves li:before{content:counter(m);position:absolute;left:1rem;top:.9rem;width:1.9rem;height:1.9rem;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--pink));color:#fff;font-weight:800;display:grid;place-items:center}
+.src{font-size:.88rem;color:var(--mute);line-height:1.5;padding-left:1.1rem}.src li{margin-bottom:.4rem}
+footer{text-align:center;color:var(--mute);font-size:.85rem;padding:2rem 1.25rem 3rem;border-top:1px solid var(--line)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:1rem}.pillbox{order:-1;min-height:170px}.split{grid-template-columns:1fr}}
+.card p{margin:0;font-size:.95rem;line-height:1.6}
+.lead{font-weight:500}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);display:flex;gap:.3rem 1.1rem;flex-wrap:wrap;justify-content:center;padding:.8rem 1.25rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+nav a{color:var(--mute);text-decoration:none;padding:.2rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--red);border-bottom-color:var(--pink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.by{font-weight:700;margin:0 0 1.2rem}.small{font-size:.88rem;color:var(--mute)}
+.case{background:#241a1f;color:#fff3f6;border-radius:18px;padding:1.5rem;margin:1.6rem 0}.case h3{color:#fff;margin-top:.3rem}.case a{color:#ffb3d1}.case .kicker{color:#ff9ec6}
+.steps{border-left:3px solid var(--pink);padding-left:1.2rem;margin:1.4rem 0}.steps p{position:relative;margin:0 0 1.1rem}.steps p:before{content:"";position:absolute;left:-1.62rem;top:.6rem;width:11px;height:11px;border-radius:50%;background:var(--pink)}
+.poll{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem;margin:1.4rem 0}
+.choices{display:grid;gap:.6rem;margin:1rem 0}
+.choices button{font:inherit;text-align:left;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;cursor:pointer}
+.choices button:hover,.choices button.on{border-color:var(--red)}
+#fb{display:none;background:var(--bg);border-left:4px solid var(--pink);padding:.9rem 1rem;margin-top:.8rem;font-size:.95rem}
+.grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.4rem 0}
+@media(max-width:760px){.grid4{grid-template-columns:1fr}.pill{animation-name:sweep2}}
+@keyframes sweep2{0%,100%{transform:translateX(-30px) rotate(-20deg)}50%{transform:translateX(30px) rotate(-10deg)}}
+@media (prefers-reduced-motion:reduce){.pill{animation:none}}
+</style>
+</head>
+<body>
+<nav id="tabs"><a href="#question">The question</a><a href="#red">Red pill</a><a href="#pink">Pink pill</a><a href="#study">Case study</a><a href="#money">The business</a><a href="#global">Global lens</a><a href="#reflect">Reflect</a><a href="#action">What now?</a><a href="#about">About</a><a href="#sources">Sources</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="kicker">Gender · Power · Digital culture</div>
+    <h1>Red Pill, Pink Pill</h1>
+    <p class="sub">Who profits when gender becomes a war between men and women?</p>
+    <p class="by">By Oluwapamilerin Adegbonmire</p>
+    <a class="btn" href="#question">Start reading ↓</a>
+  </div>
+  <div class="pillbox" aria-hidden="true"><div class="pill"><span>RED</span><span>PINK</span></div></div>
+</header>
+
+<main class="wrap">
+<section id="question" class="rv">
+  <div class="kicker">01 / Start here</div>
+  <h2>What if the gender war is also a business model?</h2>
+  <p class="lead">A scroll through social media can make it seem as if men and women are natural enemies. One video says feminism has ruined relationships. The next says women must never trust men. Another promises to teach men how to become “high value,” or women how to win at a dating market. Each post offers a simple explanation for complicated experiences.</p>
+  <p>There are real issues underneath these conversations: loneliness, rejection, economic insecurity, unequal care work, gender-based violence, and uncertainty about changing expectations. People deserve spaces to discuss those experiences. The problem begins when personal frustration becomes a sweeping story about an entire gender, and a creator sells an audience a formula for winning the conflict.</p>
+  <blockquote>When every problem is framed as proof that the other gender is the enemy, understanding becomes harder and outrage becomes easier to sell.</blockquote>
+  <p>This post looks at two online currents often described as the <strong>manosphere</strong> and the <strong>femosphere</strong>. Neither is a single movement, and their communities vary widely. The focus here is on the strands that reduce gender relations to rigid hierarchies, resentment and competition, and on what they mean for gender justice around the world.</p>
+</section>
+
+<section id="red" class="rv">
+  <div class="kicker">02 / The red pill</div>
+  <h2>“Waking up” to a story about power</h2>
+  <p>The phrase comes from the 1999 film <em>The Matrix</em>, where taking the red pill means seeing reality as it is. The film’s creators, Lilly and Lana Wachowski, are trans women, and Lilly has said the story was about the trans experience. Online, “red pill” now describes a supposed awakening to the “truth” about gender and dating: that men are disadvantaged, that feminism is to blame, and that women are motivated by status, money or control.</p>
+  <p>The manosphere is an umbrella term, not one organization. It includes men’s rights communities, pick-up artist forums, incel spaces, men going their own way, dating coaches, fitness and self-improvement creators, and more openly male-supremacist groups. Researchers Michael Vallerga and Eileen Zurbriggen read about 400,000 words from two of these forums and found a shared belief that men and women are different by nature, with men logical and women emotional, selfish and manipulative. The authors say the advice is presented as secret knowledge but is really an old stereotype taken further, and they found costs for men too, including talk of depression and suicide on the incel forum.</p>
+  <p>These spaces do not all hold identical beliefs. Research commissioned by Ofcom, the UK’s communications regulator, found a fragmented landscape where humour, debate and self-improvement content draw men in. (It involved only 38 men and one woman, and critics note that more misogynistic men may have declined to take part.) The underlying need is real: Equimundo’s 2023 survey found that two-thirds of young men feel that no one really knows them.</p>
+  <div class="split">
+    <article class="card"><h3>Support without scapegoating</h3><p>Men discussing loneliness, friendship, emotional health, fatherhood, or pressure around work and identity can create useful support. These conversations do not require blaming women or dismissing feminism.</p></article>
+    <article class="card pk"><h3>Hierarchy disguised as truth</h3><p>Some content treats women as a category to manage or rank, presents dominance as the measure of manhood, and describes equality as a loss for men. Personal disappointment becomes evidence of a universal gender conspiracy.</p></article>
+  </div>
+  <p>Criticizing misogyny should not mean dismissing men’s problems. It means asking whether a proposed solution actually helps people, or just redirects their frustration toward a convenient target.</p>
+</section>
+
+<section id="pink" class="rv">
+  <div class="kicker">03 / The pink pill</div>
+  <h2>When empowerment becomes another rigid script</h2>
+  <p>“Pink pill” is used in different ways online, so it does not describe one consistent movement. It can refer to women-centred dating advice, anti-male or separatist spaces, and content that presents heterosexual relationships as a strategic contest. Researcher Jilly Kay calls the wider network the “femosphere.” It includes r/RedPillWomen, the Female Dating Strategy forum (about 260,000 members, which began as a reaction to The Red Pill) and influencers who promote “feminine energy” and traditional roles. A 2025 research review also notes a growing presence of anti-feminist “trad” women’s accounts.</p>
+  <p>Some women turn to these spaces after sexism, harassment, unequal relationships or disappointing partners, and Kay notes that some use the advice as protection from the manosphere. Advice about boundaries, financial independence, safety and self-respect can be valuable. Yet some creators replace one rigid script with another: men are portrayed as inherently untrustworthy, relationships become transactions, and women are encouraged to measure their worth through status, appearance or the ability to secure a wealthy partner. A 2026 preprint on r/RedPillWomen (not yet peer reviewed) found members using evolutionary psychology to defend traditional roles and raised concerns about women’s autonomy.</p>
+  <div class="note"><strong>Not a false equivalence.</strong> Misogyny and anti-male generalizations do not operate in identical social conditions or carry the same histories and institutional power. Recognizing harmful rhetoric in women-centred spaces does not erase structural gender inequality or make the two phenomena interchangeable.</div>
+  <p>The useful question is not whether women should be allowed to criticize men. Of course they should. It is whether advice expands a person’s choices and agency, or narrows their world into suspicion, competition and fixed ideas about what men and women are “naturally” like.</p>
+</section>
+
+<section id="study" class="rv">
+  <div class="kicker">04 / Research in focus</div>
+  <h2>Case study: how boys meet the manosphere</h2>
+  <div class="case">
+    <div class="kicker">Milne &amp; Baker · 2025</div>
+    <h3>From “villains” to “idols”: exploring teenage boys’ conflicting attachments to manospheric masculinities</h3>
+    <p>Researchers Betsy Milne and Catherine Baker ran focus groups and follow-up interviews with young people aged 12 to 17 in four London schools, asking how they responded to a well-known manosphere influencer and to wider ideas of exaggerated masculinity. The article appeared in the journal <em>Gender and Education</em>.</p>
+    <p><a href="https://www.dcu.ie/research-publication/villains-idols-exploring-teenage-boys-conflicting-attachments-manospheric" target="_blank" rel="noopener">Read the abstract ↗</a></p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>12–17</b><span>age range of participants</span></div>
+    <div class="stat"><b>4</b><span>London schools involved</span></div>
+    <div class="stat"><b>2025</b><span>year published</span></div>
+  </div>
+  <h3>What makes the findings important?</h3>
+  <div class="steps">
+    <p><b>Condemning one influencer is not the same as rejecting the ideas.</b> Many boys “othered” the influencer and condemned his misogyny, yet several still showed support, on a continuum, for content promoting sexist gender roles and exaggerated masculine ideals.</p>
+    <p><b>Humour does work.</b> The researchers describe how joking made gendered power hierarchies feel normal and less serious.</p>
+    <p><b>So the response has to go further.</b> The authors argue that interventions should go beyond condemning single influencers and look at the wider, increasingly networked subordination of women, femininity and Queer identities online.</p>
+  </div>
+  <div class="note"><strong>Limitation.</strong> This is a qualitative study of a small group of young people in four schools in one city. It gives detailed insight into how some boys interpret this content. It cannot tell us how common these views are, how all boys think, or what happens in other countries and on other platforms.</div>
+</section>
+
+<section id="money" class="rv">
+  <div class="kicker">05 / Follow the money</div>
+  <h2>Anger has an audience. An audience has a price.</h2>
+  <p>The online gender war is not only an argument about beliefs. It can also be an attention economy. Creators compete for clicks, shares, subscriptions and loyalty. A careful discussion of structural inequality takes time. A clip promising to expose “what women really want” or “why men are being replaced” is a faster emotional hook.</p>
+  <p>A 2025 review by Vivian Gerrand, Debbie Ging, Joshua Roose and Michael Flood describes four developments that separate today’s “neo-manosphere” from the earlier one: moves to new platforms, mainstreaming and monetization, ideological and ethnic diversification, and overlap with other extreme ideologies, most of them driven by recommender algorithms. In their summary of the review, the authors describe the pitch as two steps: direct your anger at women and feminism, then buy the influencer’s products. Those products can include dating coaching, paid communities, supplements, books and merchandise.</p>
+  <p>Experiments suggest how quickly the algorithms can deliver the audience. Researchers at Dublin City University made new TikTok and YouTube Shorts accounts posing as teenage boys and young men.</p>
+  <div class="stats">
+    <div class="stat"><b>23 min</b><span>until toxic content was recommended</span></div>
+    <div class="stat"><b>26 min</b><span>until manosphere content appeared, with no searching</span></div>
+    <div class="stat"><b>3 min</b><span>average wait in a Danish study, October 2026</span></div>
+  </div>
+  <p>Both studies are small, with 10 accounts and 29 participants, and TikTok says the Dublin results do not reflect typical use. They show a risk, not an exact rate. A simple way to picture the business model:</p>
+  <div class="grid4">
+    <article class="card pk"><h3>1. Name a crisis</h3><p>Tell viewers that dating, masculinity or society is broken, and that they are losing a competition they did not know they were in.</p></article>
+    <article class="card pk"><h3>2. Offer a simple explanation</h3><p>Blame feminism, women, “weak men” or a corrupt social order instead of looking at several interacting causes.</p></article>
+    <article class="card pk"><h3>3. Sell the solution</h3><p>Offer exclusive advice, paid access, courses, coaching or a community that promises transformation.</p></article>
+    <article class="card pk"><h3>4. Keep the audience invested</h3><p>Use new controversies and perceived threats to encourage repeat viewing, sharing and purchases.</p></article>
+  </div>
+  <p>This does not mean every creator who earns money from relationship advice is exploiting an audience, or that every platform deliberately promotes misogyny. The four steps are a simple model, not a finding of the review. The careful point is that attention-based business models can reward emotionally charged content, and some creators have learned to turn gender anxiety into a product.</p>
+</section>
+
+<section id="global" class="rv">
+  <div class="kicker">06 / A global lens</div>
+  <h2>There is no single global experience of gender</h2>
+  <p>Online gender politics crosses borders, but it does not land the same way everywhere. Ideas made popular by influencers in North America, the United Kingdom or Australia travel through short video, podcasts and reposted clips, and they are read through local histories, economies and existing struggles over gender and sexuality. Feminist scholar Cynthia Enloe argues that the personal is international: everyday relationships are shaped by governments, economies and global systems.</p>
+  <p><strong>Governments get involved.</strong> In South Korea’s 2022 presidential election, 58.7% of men in their twenties voted for the winner, who campaigned on an anti-feminist platform, and 58% of women in their twenties voted for his opponent. South Korea has one of the widest gender pay gaps in the OECD and the lowest birth rate in the world, and a small feminist movement called 4B urges women to give up dating, marriage and having children.</p>
+  <p><strong>Platforms carry the same content into different conditions.</strong> The Guardian reported in April 2026 on a growing manosphere across Africa, with influencers earning money through platform creator programs. A researcher interviewed for a BBC World Service investigation said the content reaches young men with mental-health struggles in economies with high unemployment. In Latin America, one analysis argues the manosphere did not invent machismo but gave it a bigger audience. So these ideas are not simply imported from the Global North. They grow where gender inequality already exists and spread through platforms owned by Northern companies.</p>
+  <p><strong>We know less than we should.</strong> Most of the surveys cited above come from the United States and the United Kingdom, and Equimundo is only now extending its State of the World’s Men study to countries including Brazil, South Africa, Argentina, Mexico and Pakistan. For much of the Global South, the evidence is journalism and a handful of investigations rather than large surveys. That matters for justice, because policy follows the data that exists.</p>
+  <p>Intersectionality, a concept from Kimberlé Crenshaw, explains why a universal story about “men” and “women” is incomplete. Gender is lived alongside race, class, disability, sexuality and nationality. A Black woman, a migrant man, a queer teenager and a wealthy heterosexual influencer meet online gender politics from different positions, with unequal power to shape the conversation. The 2025 review above notes that some influencers borrow the language of racial justice or religion to build trust while promoting restrictive ideas about gender, so it helps to judge the message, not the messenger’s identity.</p>
+  <blockquote>A global conversation about equality must make room for different experiences without turning any group into a stereotype.</blockquote>
+  <p>UN Women and UNODC estimated that about 50,000 women and girls were killed by intimate partners or other family members in 2024, roughly 137 every day, and Africa had the highest rate of any region. These deaths cannot be traced to any one online movement or ideology. They are a reminder that gender inequality and violence are real-world problems, not only internet debates. The UN Secretary-General’s report on violence against women also found that the growth of the manosphere coincides with rising conservatism among young men, who see efforts toward women’s equality as discrimination against men.</p>
+  <p class="small">Global estimates depend on available national data, and reporting gaps remain. This statistic describes killings by partners or family members. It is not a measure of online misogyny.</p>
+</section>
+
+<section id="reflect" class="rv">
+  <div class="kicker">07 / Pause before you scroll</div>
+  <h2>What is this post asking you to believe?</h2>
+  <p>When you meet a viral clip about men, women, dating or feminism, which question would you most want answered before sharing it?</p>
+  <div class="poll"><strong>Which question would help you judge the post most critically?</strong>
+    <div class="choices">
+      <button type="button" data-i="0">A. Does it use one person’s experience to make a claim about an entire gender?</button>
+      <button type="button" data-i="1">B. Is it selling a product, course, identity or exclusive solution?</button>
+      <button type="button" data-i="2">C. Does it provide evidence, context and room for disagreement?</button>
+      <button type="button" data-i="3">D. Does it encourage understanding, or resentment toward a group?</button>
+    </div>
+    <div id="fb" aria-live="polite"></div>
+    <p class="small" style="margin-top:.8rem">This is a personal media-literacy reflection, not a scientific poll. Your choice is not collected or compared with other readers.</p>
+  </div>
+</section>
+
+<section id="action" class="rv">
+  <div class="kicker">08 / Beyond the feed</div>
+  <h2>What does a better conversation look like?</h2>
+  <p>Rejecting misogyny does not require rejecting men. Supporting women does not require treating every man as an enemy. A more equal digital culture needs room for honest talk about gendered pressures, alongside accountability for content that dehumanizes or stereotypes people.</p>
+  <ol class="moves">
+    <li><b>Separate a real problem from the scapegoat.</b> Loneliness, economic stress and relationship difficulties deserve serious answers. Blaming an entire gender is not one.</li>
+    <li><b>Check the evidence before sharing.</b> Look for the original source, the research method, who was studied, and what the findings can actually establish.</li>
+    <li><b>Notice the business model.</b> Ask what the creator gains when you feel angry, afraid, inadequate or dependent on their advice.</li>
+    <li><b>Make room for complexity.</b> Men can experience gendered pressures while women face structural inequality. Recognizing one does not cancel the other.</li>
+    <li><b>Build alternatives.</b> Support conversations about healthy relationships, emotional literacy, consent, equality, and models of masculinity that do not depend on dominance. Equimundo and Futures Without Violence suggest focusing on young men “in the middle,” who are not committed to these ideas and may be open to a conversation.</li>
+  </ol>
+  <div class="note"><strong>The point is not to choose a pill.</strong> It is to refuse the idea that social progress requires one gender to lose for the other to win.</div>
+</section>
+
+<section id="about" class="rv">
+  <div class="kicker">09 / About this project</div>
+  <h2>Why I made it this way</h2>
+  <p>This blog is my knowledge mobilization project. Its audience is young adults who use social media and dating apps, since that is where they meet these ideas. Its purpose is to explain two online movements in plain language, show who profits and who is harmed, and connect them to global gender justice. I chose a blog because it can hold both a readable argument and a full list of sources, and each section can be shared on its own. I avoided blaming men as a group, because most of the men drawn to this content are lonely rather than violent, and the aim is to reach people who are still open to other explanations.</p>
+</section>
+
+<section id="sources" class="rv">
+  <div class="kicker">10 / Sources &amp; further reading</div>
+  <h2>Read beyond the headline</h2>
+  <p>The sources support different parts of the discussion. Each has limits, and none proves that all men, women or social media users think alike.</p>
+  <ol class="src">
+    <li>Milne, B., &amp; Baker, C. (2025). “From ‘villains’ to ‘idols’: exploring teenage boys’ conflicting attachments to manospheric masculinities.” <em>Gender and Education</em>. <a href="https://www.dcu.ie/research-publication/villains-idols-exploring-teenage-boys-conflicting-attachments-manospheric" target="_blank" rel="noopener">Abstract</a></li>
+    <li>Gerrand, V., Ging, D., Roose, J. M., &amp; Flood, M. (2025). “Mapping the Neo-Manosphere(s): New Directions for Research.” <em>Men and Masculinities</em>. <a href="https://doras.dcu.ie/31449/" target="_blank" rel="noopener">Research article</a>; summary: <a href="https://www.indailysa.com.au/news/in-depth/2025/12/10/hustle-muscle-and-grift-how-the-manosphere-has-grown-into-a-money-making-machine" target="_blank" rel="noopener">“Hustle, muscle and grift”</a></li>
+    <li>Vallerga, M., &amp; Zurbriggen, E. L. (2022). “Hegemonic masculinities in the ‘Manosphere’: A thematic analysis of beliefs about men and women on The Red Pill and Incel.” <em>Analyses of Social Issues and Public Policy</em>, 22(1), 602–625. <a href="https://doi.org/10.1111/asap.12308" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ofcom (2025). “Experiences of engaging with the manosphere” (published as “The Manosphere Unmasked”). Qualitative interviews with 38 men and one woman; the sample is not representative. <a href="https://www.ofcom.org.uk/online-safety/protecting-children/experiences-of-engaging-with-the-manosphere" target="_blank" rel="noopener">Ofcom report</a></li>
+    <li>Dublin City University Anti-Bullying Centre (2024). “Recommending Toxicity.” Experiment with controlled accounts. <a href="https://www.dcu.ie/antibullyingcentre/recommending-toxicity-summary-report" target="_blank" rel="noopener">Summary report</a>; TikTok’s response: <a href="https://uk.news.yahoo.com/tiktok-youtube-shorts-push-misogynistic-152852233.html" target="_blank" rel="noopener">Euronews</a></li>
+    <li>The Copenhagen Post (Oct. 19, 2026). Danish study on TikTok. <a href="https://cphpost.dk/2026-10-19/news/round-up/study-finds-misogynistic-tiktok-content-can-appear-within-minutes/" target="_blank" rel="noopener">Article</a></li>
+    <li>UN Women &amp; UNODC (2025). “Femicides in 2024.” <a href="https://www.unwomen.org/en/digital-library/publications/2025/11/femicides-in-2024-global-estimates-of-intimate-partner-family-member-femicides" target="_blank" rel="noopener">Report</a>. UN Women, “What is the manosphere and why should we care?” <a href="https://www.unwomen.org/en/articles/explainer/what-is-the-manosphere-and-why-should-we-care" target="_blank" rel="noopener">Explainer</a></li>
+    <li>Equimundo and Futures Without Violence, “The Manosphere, Rewired.” <a href="https://www.nextgenmen.ca/library/the-manosphere-rewired-understanding-masculinities-online-and-pathways-for-healthy-connection" target="_blank" rel="noopener">Report</a>. Equimundo, <a href="https://www.equimundo.org/?p=25389" target="_blank" rel="noopener">State of the World’s Men study</a></li>
+    <li>On the femosphere: <a href="https://marieclaire.com.au/news/opinion/what-are-femcels-femosphere" target="_blank" rel="noopener">Marie Claire Australia</a> (Jilly Kay’s research); <a href="https://jezebel.com/inside-female-dating-strategy-the-subreddit-that-teach-1847558145" target="_blank" rel="noopener">Jezebel</a> (Female Dating Strategy); <a href="https://www.ebsco.com/articles/psychology/99f242d5-0ac0-531c-944e-e8c1fe2e7736/red-pill-women-strategic-appropriations-of-evolutionary-psychology-by-an-online-community-of-antifeminist-women-in-pursuit-of-traditional-relationships" target="_blank" rel="noopener">2026 preprint on r/RedPillWomen</a> (not peer reviewed)</li>
+    <li>Global politics: <a href="https://www.inkl.com/news/sluts-simps-and-body-shaming-the-rise-of-africa-s-manosphere" target="_blank" rel="noopener">The Guardian on Africa’s manosphere</a>; <a href="https://africaneyereport.com/?p=106282" target="_blank" rel="noopener">BBC World Service investigation</a>; <a href="https://www.boldlatina.com/andrew-tate-to-el-temach-how-the-latin-american-manosphere-is-reaching-millions-of-young-men/" target="_blank" rel="noopener">Bold Latina on Latin America</a>; <a href="https://sv7.thediplomat.com/2022/10/rising-backlash-against-gender-equality-in-south-korea-undermines-stability" target="_blank" rel="noopener">The Diplomat on South Korea</a>; <a href="https://www.npr.org/2024/11/08/nx-s1-5182888/4b-movement-trump-south-korea" target="_blank" rel="noopener">NPR on 4B</a></li>
+    <li>Crenshaw, K. (1989). “Demarginalizing the Intersection of Race and Sex.” <em>University of Chicago Legal Forum</em>. <a href="https://chicagounbound.uchicago.edu/uclf/vol1989/iss1/8/" target="_blank" rel="noopener">Article</a>. Enloe, C. (1989). <em>Bananas, Beaches and Bases</em>.</li>
+  </ol>
+</section>
+</main>
+
+<footer>By Oluwapamilerin Adegbonmire</footer>
+
+<script>
+document.documentElement.classList.add('js');
+try{
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  var links=document.querySelectorAll('#tabs a'),map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on');});var a=map[e.target.id];if(a)a.classList.add('on');}});},{rootMargin:'-35% 0px -55% 0px'});
+  document.querySelectorAll('main section').forEach(function(s){so.observe(s);});
+}catch(err){document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});}
+var fb=["Good instinct. One person’s experience can matter without speaking for millions. Look for evidence beyond anecdotes, and ask whether the post admits variation within the group it describes.","Follow the incentive. If a creator profits when you feel inadequate or afraid, that does not make the advice false, but it is a reason to examine the claims and any conflict of interest.","Evidence matters. Check whether the source is credible, whether the method fits the claim, and whether the creator includes context that complicates the argument.","Notice the emotional direction of the post. Content that invites curiosity and practical solutions is different from content that depends on contempt, humiliation or collective blame."];
+document.querySelectorAll('.choices button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.choices button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');var f=document.getElementById('fb');f.textContent=fb[+b.getAttribute('data-i')];f.style.display='block';});});
+</script>
+
+</body>
+</html>
